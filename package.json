@@ -1,6 +1,6 @@
 {
   "name": "is-regexp-x",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Is this value a JS regex?",
   "homepage": "https://github.com/Xotic750/is-regexp-x",
   "author": {
@@ -31,7 +31,7 @@
     "has-own-property-x": "^3.1.1",
     "has-to-string-tag-x": "^1.4.1",
     "is-object-like-x": "^1.5.1",
-    "object-define-property-x": "^3.2.0",
+    "object-define-property-x": "^4.0.0",
     "object-get-own-property-descriptor-x": "^3.1.0",
     "to-string-tag-x": "^1.4.1"
   },
