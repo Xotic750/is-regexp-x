@@ -1,22 +1,20 @@
 /**
  * @file Is this value a JS regex?
- * @version 2.2.0
- * @author Xotic750 <Xotic750@gmail.com>
- * @copyright  Xotic750
+ * @version 2.2.0.
+ * @author Xotic750 <Xotic750@gmail.com>.
+ * @copyright  Xotic750.
  * @license {@link <https://opensource.org/licenses/MIT> MIT}
- * @module is-regexp-x
+ * @module Is-regexp-x.
  */
 
-'use strict';
+const isObjectLike = require('is-object-like-x');
 
-var isObjectLike = require('is-object-like-x');
-
-var toStringTag;
-var regexClass;
-var has;
-var gOPD;
-var regexExec;
-var defineProperty;
+let toStringTag;
+let regexClass;
+let has;
+let gOPD;
+let regexExec;
+let defineProperty;
 
 if (require('has-to-string-tag-x')) {
   has = require('has-own-property-x');
@@ -28,10 +26,11 @@ if (require('has-to-string-tag-x')) {
   regexClass = '[object RegExp]';
 }
 
-var tryRegexExecCall = function tryRegexExec(value, descriptor) {
+const tryRegexExecCall = function tryRegexExec(value, descriptor) {
   try {
     value.lastIndex = 0;
     regexExec.call(value);
+
     return true;
   } catch (e) {
     return false;
@@ -46,7 +45,7 @@ var tryRegexExecCall = function tryRegexExec(value, descriptor) {
  * @param {*} value - The value to test.
  * @returns {boolean} `true` if value is a regex; otherwise `false`.
  * @example
- * var isRegex = require('is-regexp-x');
+ * var isRegex = require('is-regexp-x');.
  *
  * isRegex(undefined); // false
  * isRegex(null); // false
@@ -70,8 +69,9 @@ module.exports = function isRegex(value) {
     return toStringTag(value) === regexClass;
   }
 
-  var descriptor = gOPD(value, 'lastIndex');
-  var hasLastIndexDataProperty = descriptor && has(descriptor, 'value');
+  const descriptor = gOPD(value, 'lastIndex');
+  const hasLastIndexDataProperty = descriptor && has(descriptor, 'value');
+
   if (hasLastIndexDataProperty !== true) {
     return false;
   }
