@@ -49,11 +49,11 @@
   },
   "dependencies": {
     "has-own-property-x": "^3.2.0",
-    "has-to-string-tag-x": "^2.0.2",
-    "is-object-like-x": "^2.0.3",
+    "has-to-string-tag-x": "^2.0.3",
+    "is-object-like-x": "^2.0.4",
     "object-define-property-x": "^4.1.0",
     "object-get-own-property-descriptor-x": "^3.2.0",
-    "to-string-tag-x": "^2.0.6"
+    "to-string-tag-x": "^2.0.7"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.0",
