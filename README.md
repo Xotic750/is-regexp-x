@@ -21,38 +21,39 @@
 <a name="module_is-regexp-x"></a>
 
 ## is-regexp-x
+
 Is this value a JS regex?
 
-**Version**: 2.2.0  
-**Author**: Xotic750 <Xotic750@gmail.com>  
-**License**: [MIT](&lt;https://opensource.org/licenses/MIT&gt;)  
-**Copyright**: Xotic750  
+**Version**: 2.2.0
+
 <a name="exp_module_is-regexp-x--module.exports"></a>
 
 ### `module.exports(value)` ⇒ <code>boolean</code> ⏏
+
 This method tests if a value is a regex.
 
 **Kind**: Exported function  
-**Returns**: <code>boolean</code> - `true` if value is a regex; otherwise `false`.  
+**Returns**: <code>boolean</code> - `true` if value is a regex; otherwise `false`.
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param | Type            | Description        |
+| ----- | --------------- | ------------------ |
 | value | <code>\*</code> | The value to test. |
 
-**Example**  
+**Example**
+
 ```js
-var isRegex = require('is-regexp-x');
+import isRegex from 'is-regexp-x';
 
-isRegex(undefined); // false
-isRegex(null); // false
-isRegex(false); // false
-isRegex(true); // false
-isRegex(42); // false
-isRegex('foo'); // false
-isRegex(function () {}); // false
-isRegex([]); // false
-isRegex({})); // false
+console.log(isRegex(undefined)); // false
+console.log(isRegex(null)); // false
+console.log(isRegex(false)); // false
+console.log(isRegex(true)); // false
+console.log(isRegex(42)); // false
+console.log(isRegex('foo')); // false
+console.log(isRegex(function () {})); // false
+console.log(isRegex([])); // false
+console.log(isRegex({}))); // false
 
-isRegex(/a/g); // true
-isRegex(new RegExp('a', 'g')); // true
+console.log(isRegex(/a/g)); // true
+console.log(isRegex(new RegExp('a', 'g'))); // true
 ```
