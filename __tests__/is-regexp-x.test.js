@@ -1,7 +1,6 @@
 import noop from 'lodash/noop';
 import isRegex from '../src/is-regexp-x';
 
-/* eslint-disable-next-line compat/compat */
 const hasToStringTag = typeof Symbol === 'function' && typeof Symbol.toStringTag === 'symbol';
 const itHastoStringTag = hasToStringTag ? it : xit;
 
@@ -36,7 +35,6 @@ describe('isRegex', function() {
       },
     };
 
-    /* eslint-disable-next-line compat/compat */
     fakeRegex[Symbol.toStringTag] = 'RegExp';
     expect(isRegex(fakeRegex)).toBe(false, 'fake RegExp with @@toStringTag "RegExp" is not regex');
   });
