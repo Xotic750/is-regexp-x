@@ -27,7 +27,7 @@ const tryRegexExecCall = function tryRegexExec(value, descriptor) {
  * @param {*} value - The value to test.
  * @returns {boolean} `true` if value is a regex; otherwise `false`.
  */
-export default function isRegex(value) {
+const isRegex = function isRegex(value) {
   if (isObjectLike(value) === false) {
     return false;
   }
@@ -44,4 +44,6 @@ export default function isRegex(value) {
   }
 
   return tryRegexExecCall(value, descriptor);
-}
+};
+
+export default isRegex;

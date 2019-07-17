@@ -26,7 +26,7 @@ var tryRegexExecCall = function tryRegexExec(value, descriptor) {
  */
 
 
-export default function isRegex(value) {
+var isRegex = function isRegex(value) {
   if (isObjectLike(value) === false) {
     return false;
   }
@@ -43,6 +43,8 @@ export default function isRegex(value) {
   }
 
   return tryRegexExecCall(value, descriptor);
-}
+};
+
+export default isRegex;
 
 //# sourceMappingURL=is-regexp-x.esm.js.map
