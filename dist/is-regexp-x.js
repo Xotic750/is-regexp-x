@@ -2,13 +2,13 @@
 {
   "author": "Graham Fairweather",
   "copywrite": "Copyright (c) 2017",
-  "date": "2019-07-19T22:08:52.816Z",
+  "date": "2019-07-21T22:58:09.843Z",
   "describe": "",
   "description": "Is this value a JS regex?",
   "file": "is-regexp-x.js",
   "hash": "eb9934b4a46999a733f6",
   "license": "MIT",
-  "version": "3.0.9"
+  "version": "3.0.10"
 }
 */
 (function webpackUniversalModuleDefinition(root, factory) {
