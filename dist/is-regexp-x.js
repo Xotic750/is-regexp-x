@@ -2,13 +2,13 @@
 {
   "author": "Graham Fairweather",
   "copywrite": "Copyright (c) 2017",
-  "date": "2019-07-27T08:51:04.751Z",
+  "date": "2019-07-27T14:39:46.848Z",
   "describe": "",
   "description": "Is this value a JS regex?",
   "file": "is-regexp-x.js",
-  "hash": "a75f3bee04887366cd74",
+  "hash": "4c5b8ee66e528ceeacb8",
   "license": "MIT",
-  "version": "3.0.16"
+  "version": "3.0.17"
 }
 */
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -1392,8 +1392,6 @@ var binaryRadix = 2;
 var octalRadix = 8;
 var testCharsCount = 2;
 var to_number_x_esm_ERROR_MESSAGE = 'Cannot convert a Symbol value to a number';
-/** @type {NumberConstructor} */
-
 var to_number_x_esm_castNumber = testCharsCount.constructor;
 var pStrSlice = to_number_x_esm_ERROR_MESSAGE.slice;
 var binaryRegex = /^0b[01]+$/i;
@@ -1919,10 +1917,10 @@ var assert_is_object_x_esm_assertIsObject = function assertIsObject(value) {
 
 
 
-/** @type {BooleanConstructor} */
-
+var ObjectCtr = {}.constructor;
 var object_define_property_x_esm_castBoolean = true.constructor;
-var nativeDefProp = typeof Object.defineProperty === 'function' && Object.defineProperty;
+var nd = ObjectCtr.defineProperty;
+var nativeDefProp = typeof nd === 'function' && nd;
 var definePropertyFallback;
 
 var toPropertyDescriptor = function _toPropertyDescriptor(desc) {
@@ -2013,27 +2011,21 @@ if (nativeDefProp) {
 }
 
 if (object_define_property_x_esm_castBoolean(nativeDefProp) === false || definePropertyFallback) {
-  var object_define_property_x_esm_prototypeOfObject = Object.prototype; // If JS engine supports accessors creating shortcuts.
+  var object_define_property_x_esm_prototypeOfObject = ObjectCtr.prototype; // If JS engine supports accessors creating shortcuts.
 
-  var defineGetter;
-  var defineSetter;
-  var object_define_property_x_esm_lookupGetter;
-  var object_define_property_x_esm_lookupSetter;
   var object_define_property_x_esm_supportsAccessors = has_own_property_x_esm(object_define_property_x_esm_prototypeOfObject, '__defineGetter__');
+  /* eslint-disable-next-line no-underscore-dangle */
 
-  if (object_define_property_x_esm_supportsAccessors) {
-    /* eslint-disable-next-line no-underscore-dangle,no-restricted-properties */
-    defineGetter = object_define_property_x_esm_prototypeOfObject.__defineGetter__;
-    /* eslint-disable-next-line no-underscore-dangle,no-restricted-properties */
+  var defineGetter = object_define_property_x_esm_supportsAccessors && object_define_property_x_esm_prototypeOfObject.__defineGetter_;
+  /* eslint-disable-next-line no-underscore-dangle,no-restricted-properties */
 
-    defineSetter = object_define_property_x_esm_prototypeOfObject.__defineSetter__;
-    /* eslint-disable-next-line no-underscore-dangle */
+  var defineSetter = object_define_property_x_esm_supportsAccessors && object_define_property_x_esm_prototypeOfObject.__defineSetter__;
+  /* eslint-disable-next-line no-underscore-dangle */
 
-    object_define_property_x_esm_lookupGetter = object_define_property_x_esm_prototypeOfObject.__lookupGetter__;
-    /* eslint-disable-next-line no-underscore-dangle */
+  var object_define_property_x_esm_lookupGetter = object_define_property_x_esm_supportsAccessors && object_define_property_x_esm_prototypeOfObject.__lookupGetter__;
+  /* eslint-disable-next-line no-underscore-dangle */
 
-    object_define_property_x_esm_lookupSetter = object_define_property_x_esm_prototypeOfObject.__lookupSetter__;
-  }
+  var object_define_property_x_esm_lookupSetter = object_define_property_x_esm_supportsAccessors && object_define_property_x_esm_prototypeOfObject.__lookupSetter__;
 
   $defineProperty = function defineProperty(object, property, descriptor) {
     assert_is_object_x_esm(object);
@@ -2041,7 +2033,7 @@ if (object_define_property_x_esm_castBoolean(nativeDefProp) === false || defineP
     var propDesc = toPropertyDescriptor(descriptor); // make a valiant attempt to use the real defineProperty for IE8's DOM elements.
 
     if (definePropertyFallback) {
-      var result = attempt_x_esm.call(Object, definePropertyFallback, object, propKey, propDesc);
+      var result = attempt_x_esm.call(ObjectCtr, definePropertyFallback, object, propKey, propDesc);
 
       if (result.threw === false) {
         return result.value;
