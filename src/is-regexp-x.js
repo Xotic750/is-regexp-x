@@ -4,14 +4,15 @@ import has from 'has-own-property-x';
 import gOPD from 'object-get-own-property-descriptor-x';
 import defineProperty from 'object-define-property-x';
 import toStringTag from 'to-string-tag-x';
+import methodize from 'simple-methodize-x';
 
-const regexExec = /none/.exec;
+const regexExec = methodize(/none/.exec);
 const regexClass = '[object RegExp]';
 
 const tryRegexExecCall = function tryRegexExec(value, descriptor) {
   try {
     value.lastIndex = 0;
-    regexExec.call(value);
+    regexExec(value);
 
     return true;
   } catch (e) {

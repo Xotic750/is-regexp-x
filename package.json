@@ -55,6 +55,7 @@
     "is-object-like-x": "^2.1.0",
     "object-define-property-x": "^5.1.0",
     "object-get-own-property-descriptor-x": "^4.1.0",
+    "simple-methodize-x": "^1.0.2",
     "to-string-tag-x": "^2.1.0"
   },
   "devDependencies": {
