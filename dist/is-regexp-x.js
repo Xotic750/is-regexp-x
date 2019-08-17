@@ -2,7 +2,7 @@
 {
   "author": "Graham Fairweather",
   "copywrite": "Copyright (c) 2017",
-  "date": "2019-08-17T14:15:45.756Z",
+  "date": "2019-08-17T22:05:27.191Z",
   "describe": "",
   "description": "Is this value a JS regex?",
   "file": "is-regexp-x.js",
