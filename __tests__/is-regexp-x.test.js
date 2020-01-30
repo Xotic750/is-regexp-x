@@ -42,6 +42,7 @@ describe('isRegex', function() {
   it('regexes', function() {
     expect.assertions(2);
     expect(isRegex(/a/g)).toBe(true, 'regex literal is regex');
+    /* eslint-disable-next-line prefer-regex-literals */
     expect(isRegex(new RegExp('a', 'g'))).toBe(true, 'regex object is regex');
   });
 
